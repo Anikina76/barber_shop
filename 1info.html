@@ -12,6 +12,9 @@
 !----1-----!
   
 на кожному сайту є скелет
+<header></header>
+<main></main>
+<footer></footer>
 
 
 <ul>список для тега для маркированного списка
@@ -95,8 +98,158 @@ rel="noopener noreferrer" обов'язково вказувати це знач
   
   <h2 hidden="">our works</h2> можно спрятать заголовок, но им пользоваться не правильно. не корректоно работает скринридер
 
-  <header></header>
-  <main></main>
-  <footer></footer>
+Підключити файл CSS
+Под <title></title> пишем link  и нажимаем  tab. И у нас разворачиваеться следующщая ссылка.
+  <link rel="stylesheet" href="./css/styles.css">
+
+  Критичний CSS, для оптимізаціі, тільки коли довго прогружається.
+<style></style>
+
+
+
+види селекторів:
+
+Универсальный стиль-это* приминяет стиль на всю страницу
+* {
+	margin: 0;          - убирает все отступы
+	list-style: none;    убирает все маркеры
+	text-decoration: none;  убeрает все подчеркивания
+}
+Или по отдельности добавлять к классам слово list
+
+1 - універсальний-звертається одразу до усіх елементів. застосовується для скидання до дефолтних стилів від браузера.
+* {
+  margin: 0;
+}
+
+2. - селектор елементу(тегу), також застосовуэмо для скидання до дефолтних стилів від браузера.
+
+цей тег убирає маркери(точки) у списка
+ul {
+  list-style: none;
+}
+цей прибирає у посілань підкреслювання.
+a {
+  text-decoration: none;
+}
+
+прибрати курсив тексту у футері
+font-style: normal;
+
+ 3 - селектор ID -  тема 2 урок 1 якорні посилання на 34 хвилині. 
+ звертається локально де прописано  id=description вони дуже специфічні та мають бути унікальні, нступний наприклад id=secondary-description
+ це в HTML 
+ <p id=description>We are experts</p>
+це в CSS 
+#description {
+  color: chartreuse;
+}
+
+4 - 
+
+
+important якщо браузер побачить, то застосує ці стилі, бо найвищий рівень спеціфчності та каскадності.
+
+
+
+ПСЕВДОКЛАСИ
+:hover  це зміна прі наведенні курсору мишки
+:focus  це зміна прі пееміщенні по сторінці кнопкою TAB. тільки для інтерактивних едлементів
+на кожному елементі має стояти обидва.
+:active  це зміни які відбуаються при натисканні на елемент або утриманні його натиснутим.
+:visited  ці зміни коли відвідувач вже відвідав це посилання тоді воно змінює колір.
+
+ПСЕВДОЕЛЕМЕНТИ
+::first-line  змінити тільки перший рядок абзацу
+::first-letter  змінює першу літеру тексту
+::selection  змінити колір текста коли виділяеш. по замовчуванню голубий, але можно змінити. якщо потрібно замінити до усього сайту, то потрібно через *
+*::selection
+text-transform: uppercase;
+робить всі літери великими
+
+text-transform: capitalize;
+перші літери великі
+
+
+ЯКІ ШРИФТИ Є В ПРОЕКТІ У figma
+Встановлюємо у фигме плагин. якщо забув, ось посилання на видео
+https://www.youtube.com/watch?v=6nKQsgiNIFc
+Font Fascia
+By 
+thenew
+|
+Used by 93.3k people
+
+https://fonts.google.com/ сховище шрифтів для скачування.
+ Варианти скидання стилів
+ ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+HEADER:
+Top-header, page-header, main-header, 
+Nav, navigasion, main-nav, main-navigation, top-nav, page-nav
+Logotype, Logotype-link, logo, logo-link, 
+Logo-icon, logo-picture, logo-img, logo-image
+(Nav/ul) menu, Nav-list, site-nav ,auth-nav 
+(li) Menu-item
+(a) menu-link
+(tel) contact-phone-number
+(Button) modal-btn
+HERO:
+
+
+для шрифтів обов'язково задавати 
+О ЧАСОВОЙ СТРЕЛКЕ 12,3,6,9 часов
+Якщо одної властивості немає, то мишемо замість неї 0
+
+margin: 10(top) 20(:left) 30(button) 40(:right)
+
+
+background-color: transparent колир прозорий
+
+
+.class:hover,
+.class:focus {
+властивість: значення;
+}
+
+.header-link:hover {    наведение мышки
+	color: #4D5AE5;
+}
+.header-link:focus {    наступить TABом
+	color: #4D5AE5;
+}
+.header-link:aktiv {    активная ссылка
+	color: #4D5AE5;
+}
+CSS
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.current {
+  color: var(--active-color);
+}
+
+змінні значення
+:root {
+  --main-title-color: #ffffff;
+}
+.hero-title {
+color: var(--main-title-color);
+}
+
+
 </body>
 </html>
